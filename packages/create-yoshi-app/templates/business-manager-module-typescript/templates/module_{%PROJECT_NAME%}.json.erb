@@ -1,8 +1,5 @@
-
 {
   "moduleId": "{%PROJECT_NAME%}",
-  "minifiedBundleFile": "<%= static_url('com.wixpress.{%projectName%}-app') %>{%projectName%}-module.bundle.min.js",
-  "bundleFile": "<%= static_url('com.wixpress.{%projectName%}-app') %>{%projectName%}-module.bundle.js",
   "mainPageComponentId": "{%projectName%}-lazy-component-id",
   "pageComponents": [
     {
@@ -15,5 +12,9 @@
     "topology": {
       "staticsUrl": "<%= static_url('com.wixpress.{%projectName%}-app') %>"
     }
-  }
+  },
+  "bundles": [
+    "file": "<%= static_url('com.wixpress.{%projectName%}-app') %>{%projectName%}-module.bundle.min.js",
+    "debugFile": "<%= static_url('com.wixpress.{%projectName%}-app') %>{%projectName%}-module.bundle.js"
+  ]
 }
