@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import * as css from './ExampleWidgetSettings.scss';
 import './ExampleWidgetSettings.global.scss';
 import { get } from 'lodash';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme/build';
 import { ExampleWidgetSettings } from './ExampleWidgetSettings';
 import { Slider, ColorPickerColorSpace } from '@wix/wix-base-ui';
@@ -23,8 +23,8 @@ describe('Example Widget Settings', () => {
     Styles: {
       getStyleParams: callback => callback(styleParams),
       setFontParam: () => {},
-    },
-  };
+    } as any,
+  } as any;
 
   afterEach(() => wrapper.unmount());
 

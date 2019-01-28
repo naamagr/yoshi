@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { translate } from 'react-i18next';
 import { withExperiments } from '@wix/wix-experiments-react';
 import { ButtonNext as Button } from 'wix-ui-core/button-next';
