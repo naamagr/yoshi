@@ -22,6 +22,7 @@ describe('Example Widget Settings', () => {
   window.Wix = {
     Styles: {
       getStyleParams: callback => callback(styleParams),
+      setFontParam: () => {},
     },
   };
 

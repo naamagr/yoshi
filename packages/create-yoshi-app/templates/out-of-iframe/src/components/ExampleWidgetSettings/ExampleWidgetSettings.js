@@ -1,6 +1,7 @@
 import React from 'react';
 import * as css from './ExampleWidgetSettings.scss';
 import './ExampleWidgetSettings.global.scss';
+import { get } from 'lodash';
 import {
   Slider,
   ColorPickerColorSpace,
@@ -16,11 +17,15 @@ const defaultSettingsValues = {
 export class ExampleWidgetSettings extends React.Component {
   state = defaultSettingsValues;
 
-  componentWillMount() {
+  componentDidMount() {
     window.Wix.Styles.getStyleParams(styleParams => {
       this.setState({
-        backgroundColor: styleParams.colors['backgroundColor'].value,
-        fontSize: styleParams.fonts['fontSize'].size,
+        backgroundColor: get(
+          styleParams,
+          'colors.backgroundColor.value',
+          this.state.backgroundColor,
+        ),
+        fontSize: get(styleParams, 'fonts.fontSize.size', this.state.fontSize),
       });
     });
   }

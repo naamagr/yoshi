@@ -4,11 +4,10 @@ import { withExperiments } from '@wix/wix-experiments-react';
 import { ButtonNext as Button } from 'wix-ui-core/button-next';
 import styles from './ExampleWidget.st.css';
 import { TranslationFunction } from 'i18next';
-import Experiments from '@wix/wix-experiments';
 
 interface IExampleWidgetProps {
-  name: string,
-  t: TranslationFunction
+  name: string;
+  t: TranslationFunction;
 }
 
 class ExampleWidgetComponent extends React.PureComponent<IExampleWidgetProps> {
@@ -27,4 +26,6 @@ class ExampleWidgetComponent extends React.PureComponent<IExampleWidgetProps> {
   }
 }
 
-export const ExampleWidget = withExperiments<any>(translate()<IExampleWidgetProps>(ExampleWidgetComponent));
+export const ExampleWidget = withExperiments<any>(
+  translate()<IExampleWidgetProps>(ExampleWidgetComponent),
+);

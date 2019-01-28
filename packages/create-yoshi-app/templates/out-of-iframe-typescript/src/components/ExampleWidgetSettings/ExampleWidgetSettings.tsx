@@ -1,44 +1,49 @@
 import React from 'react';
 import * as css from './ExampleWidgetSettings.scss';
 import './ExampleWidgetSettings.global.scss';
+import { get } from 'lodash';
 import {
   Slider,
   ColorPickerColorSpace,
   Divider,
   TextLabel,
 } from '@wix/wix-base-ui';
-//TODO: check (window as any)
+
 interface IExampleWidgetSettingsState {
   backgroundColor: string,
   fontSize: number
 }
 
-const defaultSettingsValues: IExampleWidgetSettingsState= {
+const defaultSettingsValues: IExampleWidgetSettingsState = {
   backgroundColor: '#ffffff',
   fontSize: 14,
 };
 
-export class ExampleWidgetSettings extends React.PureComponent<{}, IExampleWidgetSettingsState> {
+export class ExampleWidgetSettings extends React.Component<{}, IExampleWidgetSettingsState> {
   state = defaultSettingsValues;
 
-  componentWillMount() {
-    (window as any).Wix.Styles.getStyleParams(styleParams => {
+  componentDidMount() {
+    window.Wix.Styles.getStyleParams(styleParams => {
       this.setState({
-        backgroundColor: styleParams.colors['backgroundColor'].value,
-        fontSize: styleParams.fonts['fontSize'].size,
+        backgroundColor: get(
+          styleParams,
+          'colors.backgroundColor.value',
+          this.state.backgroundColor,
+        ),
+        fontSize: get(styleParams, 'fonts.fontSize.size', this.state.fontSize),
       });
     });
-  }
+  }  
 
   updateHeaderBackgroundColor = (backgroundColor: string) => {
-    (window as any).Wix.Styles.setColorParam('backgroundColor', {
+    window.Wix.Styles.setColorParam('backgroundColor', {
       value: { color: false, opacity: 1, rgba: backgroundColor },
     });
     this.setState({ backgroundColor });
   };
 
   updateHeaderFontSize = (fontSize: number) => {
-    (window as any).Wix.Styles.setFontParam('fontSize', {
+    window.Wix.Styles.setFontParam('fontSize', {
       value: {
         family: 'roboto-bold',
         fontStyleParam: true,

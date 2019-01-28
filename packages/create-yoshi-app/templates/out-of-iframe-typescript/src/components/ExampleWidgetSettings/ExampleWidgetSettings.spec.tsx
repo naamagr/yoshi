@@ -19,10 +19,10 @@ describe('Example Widget Settings', () => {
     },
   };
 
-  //TODO: (window as any)
-  (window as any).Wix = {
+  window.Wix = {
     Styles: {
       getStyleParams: callback => callback(styleParams),
+      setFontParam: () => {},
     },
   };
 

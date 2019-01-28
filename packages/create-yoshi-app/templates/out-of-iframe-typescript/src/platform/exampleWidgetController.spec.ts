@@ -23,7 +23,7 @@ describe('exampleWidgetControllerFactory', () => {
     const locale = 'locale';
     const experiments = { someExperiment: 'true' };
 
-    const controller = await exampleWidgetControllerFactory(<any> {
+    const controller = await exampleWidgetControllerFactory({
       appParams,
       setProps: setPropsSpy,
       wixCodeApi: {
@@ -31,7 +31,7 @@ describe('exampleWidgetControllerFactory', () => {
           locale,
         },
       },
-    });
+    } as any);
 
     controller.pageReady();
 
