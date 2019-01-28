@@ -10,8 +10,8 @@ import {
 } from '@wix/wix-base-ui';
 
 interface IExampleWidgetSettingsState {
-  backgroundColor: string,
-  fontSize: number
+  backgroundColor: string;
+  fontSize: number;
 }
 
 const defaultSettingsValues: IExampleWidgetSettingsState = {
@@ -19,7 +19,10 @@ const defaultSettingsValues: IExampleWidgetSettingsState = {
   fontSize: 14,
 };
 
-export class ExampleWidgetSettings extends React.Component<{}, IExampleWidgetSettingsState> {
+export class ExampleWidgetSettings extends React.Component<
+  {},
+  IExampleWidgetSettingsState
+> {
   state = defaultSettingsValues;
 
   componentDidMount() {
@@ -33,7 +36,7 @@ export class ExampleWidgetSettings extends React.Component<{}, IExampleWidgetSet
         fontSize: get(styleParams, 'fonts.fontSize.size', this.state.fontSize),
       });
     });
-  }  
+  }
 
   updateHeaderBackgroundColor = (backgroundColor: string) => {
     window.Wix.Styles.setColorParam('backgroundColor', {

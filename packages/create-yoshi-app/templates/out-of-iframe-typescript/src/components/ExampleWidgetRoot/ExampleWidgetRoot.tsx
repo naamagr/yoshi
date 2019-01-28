@@ -4,16 +4,18 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '../../config/i18n';
 import { ExperimentsProvider } from '@wix/wix-experiments-react';
 import { ExperimentsBag } from '@wix/wix-experiments';
-import { IHostProps } from  '@wix/native-components-infra/dist/src/types/types';
+import { IHostProps } from '@wix/native-components-infra/dist/src/types/types';
 
 interface IExampleWidgetRootProps {
-  name: string,
-  locale: string,
-  experiments: ExperimentsBag,
-  host?: IHostProps,
+  name: string;
+  locale: string;
+  experiments: ExperimentsBag;
+  host?: IHostProps;
 }
 
-export class ExampleWidgetRoot extends React.PureComponent<IExampleWidgetRootProps> {
+export class ExampleWidgetRoot extends React.PureComponent<
+  IExampleWidgetRootProps
+> {
   render() {
     const { name, locale, experiments } = this.props;
     return (

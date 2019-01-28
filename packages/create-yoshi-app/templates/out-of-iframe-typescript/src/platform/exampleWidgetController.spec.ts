@@ -3,7 +3,10 @@ import LaboratoryTestkit from '@wix/wix-experiments/dist/src/laboratory-testkit'
 import { EXPERIMENTS_SCOPE } from '../config';
 import { ExperimentsBag } from '@wix/wix-experiments';
 
-export function mockExperiments(scope: string, experiments: ExperimentsBag): void {
+export function mockExperiments(
+  scope: string,
+  experiments: ExperimentsBag,
+): void {
   new LaboratoryTestkit()
     .withScope(scope)
     .withBaseUrl(window.location.href)

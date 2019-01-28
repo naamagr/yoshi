@@ -1,4 +1,7 @@
-import { IWidgetControllerConfig, IWidgetController } from '@wix/native-components-infra/dist/src/types/types';
+import {
+  IWidgetControllerConfig,
+  IWidgetController,
+} from '@wix/native-components-infra/dist/src/types/types';
 import { EXPERIMENTS_SCOPE } from '../config/index';
 import Experiments from '@wix/wix-experiments';
 
@@ -14,7 +17,9 @@ async function getExperimentsByScope(scope: string) {
   return experiments.all();
 }
 
-export async function exampleWidgetControllerFactory(controllerConfig: IWidgetControllerConfig): Promise<IWidgetController>{
+export async function exampleWidgetControllerFactory(
+  controllerConfig: IWidgetControllerConfig,
+): Promise<IWidgetController> {
   const { appParams, setProps } = controllerConfig;
   const locale = getLocale(controllerConfig);
   const experiments = await getExperimentsByScope(EXPERIMENTS_SCOPE);
