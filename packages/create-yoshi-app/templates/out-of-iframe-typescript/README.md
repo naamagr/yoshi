@@ -25,3 +25,5 @@ chrome://flags/#allow-insecure-localhost
 Then click `Enable` under the highlighted flag reading
 
 > Allow invalid certificates for resources loaded from localhost.
+
+Another option is to use [mkcert](https://github.com/FiloSottile/mkcert) to create your own CA and certificates instead of a self-signed certificate.
