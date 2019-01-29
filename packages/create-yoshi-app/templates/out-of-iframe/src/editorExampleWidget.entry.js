@@ -5,7 +5,9 @@ import { ViewerScriptWrapper, withStyles } from '@wix/native-components-infra';
 import { viewerScript } from './platform/viewerScript';
 
 const WrappedExampleWidget = ViewerScriptWrapper(
-  withStyles(ExampleWidgetRoot, { cssPath: ['editorExampleWidget.stylable.bundle.css'] }),
+  withStyles(ExampleWidgetRoot, {
+    cssPath: ['editorExampleWidget.stylable.bundle.css'],
+  }),
   {
     viewerScript,
     Wix: window.Wix,

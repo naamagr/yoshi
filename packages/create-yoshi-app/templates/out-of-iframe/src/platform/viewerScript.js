@@ -1,4 +1,4 @@
-import { exampleWidgetControllerFactory} from './exampleWidgetController';
+import { exampleWidgetControllerFactory } from './exampleWidgetController';
 
 function createControllers(controllersConfig) {
   return [exampleWidgetControllerFactory(controllersConfig[0])];

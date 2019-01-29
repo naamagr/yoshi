@@ -1,7 +1,7 @@
 import { EXPERIMENTS_SCOPE } from '../config/index';
 import Experiments from '@wix/wix-experiments';
 
-function getLocale({ wixCodeApi }){
+function getLocale({ wixCodeApi }) {
   return wixCodeApi.window.locale || 'en';
 }
 
@@ -13,7 +13,7 @@ async function getExperimentsByScope(scope) {
   return experiments.all();
 }
 
-export async function exampleWidgetControllerFactory(controllerConfig){
+export async function exampleWidgetControllerFactory(controllerConfig) {
   const { appParams, setProps } = controllerConfig;
   const locale = getLocale(controllerConfig);
   const experiments = await getExperimentsByScope(EXPERIMENTS_SCOPE);
