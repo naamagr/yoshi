@@ -5,7 +5,7 @@ const velocityDataPrivate = require('../velocity.private.data.json');
 const fs = require('fs');
 
 const server = httpTestkit.server({
-  port: process.env.PORT,
+  port: 12345, //process.env.PORT,
   ssl: {
     cert: fs.readFileSync('./test/certificates/cert.pem', 'utf-8'),
     key: fs.readFileSync('./test/certificates/key.pem', 'utf-8'),
