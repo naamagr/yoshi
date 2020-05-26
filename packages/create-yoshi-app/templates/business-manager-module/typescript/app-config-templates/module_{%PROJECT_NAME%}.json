@@ -1,5 +1,6 @@
 {
   "moduleId": "{%PROJECT_NAME%}",
+  "appDefId": "00000000-0000-0000-0000-000000000000",
   "mainPageComponentId": "{%projectName%}",
   "pageComponents": [
     {
